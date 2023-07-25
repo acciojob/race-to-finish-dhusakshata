@@ -1,8 +1,5 @@
 window.promises = [];
 
-// Do not change the code above this
-// add your promises to the array `promises`
-
 function getRandomTime(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -16,9 +13,18 @@ function createPromise() {
   });
 }
 
-for (let i = 0; i < 5; i++) {
-  window.promises.push(createPromise());
-}
+// Adding promises to the window.promises array
+const promise1 = createPromise();
+const promise2 = createPromise();
+const promise3 = createPromise();
+const promise4 = createPromise();
+const promise5 = createPromise();
+
+window.promises.push(promise1);
+window.promises.push(promise2);
+window.promises.push(promise3);
+window.promises.push(promise4);
+window.promises.push(promise5);
 
 Promise.any(window.promises)
   .then((result) => {
@@ -29,4 +35,5 @@ Promise.any(window.promises)
     // This block will not be executed since Promise.any() will resolve with the first fulfilled promise.
     console.error(error);
   });
+
 
